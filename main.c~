@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sskinner <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/09/24 15:07:11 by sskinner          #+#    #+#             */
+/*   Updated: 2018/09/24 15:13:18 by sskinner         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_putchar(char q)
+{
+	write(1, &q, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+		ft_putchar('-');
+	if (nb < 10)
+		ft_putchar(nb + '0');
+	if (nb > 0)
+	{
+		ft_putnbr(nb / 10);
+		ft_putchar(nb % 10 + '0');
+	}
+}
+
+void	ft_putstr(char *str)
+{
+	int index;
+
+	index = 0;
+	while (str[index] != '\0')
+	{
+		ft_putchar(str[index]);
+		index++;
+	}
+}
+
+int main ()
